@@ -9,15 +9,50 @@ const App = () => {
     left: "0px",
     top: "0px",
   });
-  const reset = () => {};
-  const renderChoice = () => {};
+  document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            //alert('Left Key pressed!')
+            setBallPosition({right:"10px"})
+            break;
+        case 38:
+          //alert('Up Key pressed!')
+          setBallPosition({bottom:"10px"})
+            break;
+        case 39:
+          //alert('Rigth Key pressed!')
+          setBallPosition({left:"10px"})
+            break;
+        case 40:
+          // alert('Down Key pressed!');
+          setBallPosition({up:"10px"})
+            break;
+    }
+};
+  const reset = () => {
+    setRenderBall(false)
+  };
+  function renderChoice(event){
+    alert(event.keyCode)
+
+  }
+  const abc = () => {
+    document.addEventListener("keypress",renderChoice(),false)
+
+  };
+  const startGame=()=>{
+    setRenderBall(true);
+  }
 
   return (
     <div className="playground">
+      {renderBall?null:<button className="start" onClick={startGame}>Start</button>}
       <button onClick={reset} className="reset">
         Reset
       </button>
-      {renderChoice()}
+      {renderBall?<p className="ball" style={ballPosition} ></p>:null}
+      
+      
     </div>
   );
 };
