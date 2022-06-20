@@ -13,19 +13,19 @@ const App = () => {
     switch (e.keyCode) {
         case 37:
             //alert('Left Key pressed!')
-            setBallPosition({right:"10px"})
+            setBallPosition({right:"5px"})
             break;
         case 38:
           //alert('Up Key pressed!')
-          setBallPosition({bottom:"10px"})
+          setBallPosition({bottom:"5px"})
             break;
         case 39:
           //alert('Rigth Key pressed!')
-          setBallPosition({left:"10px"})
+          setBallPosition({left:"5px"})
             break;
         case 40:
           // alert('Down Key pressed!');
-          setBallPosition({up:"10px"})
+          setBallPosition({up:"5px"})
             break;
     }
 };
